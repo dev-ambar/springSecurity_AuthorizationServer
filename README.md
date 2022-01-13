@@ -1,2 +1,2 @@
 # springSecurity_AuthorizationServer
- this is  project for the Authorization Server which genrate JWt based Aaoth Token  which is fether use for the Resource server to acces the resource 
+ this is  project for the Authorization Server which generate JWt based OAuth Token  which is further use for the Resource server to access the resource 
