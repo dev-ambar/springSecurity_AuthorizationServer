@@ -25,7 +25,8 @@ import java.security.KeyPair;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    private static final String RESOURCE_ID = "couponservice";
+    private static final String CLIENT_RESOURCE_ID = "couponservice";
+    private static final String PRODUCT_RESOURCE_ID = "product-service";
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -52,7 +53,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory().withClient("couponclientapp").secret(passwordEncoder.encode("9999"))
-                .authorizedGrantTypes("password","refresh_token").scopes("read","write").resourceIds(RESOURCE_ID);
+                .authorizedGrantTypes("password","refresh_token").scopes("read","write").resourceIds(CLIENT_RESOURCE_ID)
+                .and().withClient("productclientapp").secret(passwordEncoder.encode("9999"))
+                .authorizedGrantTypes("password","refresh_token").scopes("read","write").resourceIds(PRODUCT_RESOURCE_ID);
     }
 
     @Override
