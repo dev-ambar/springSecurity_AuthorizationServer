@@ -1,0 +1,4 @@
+# productService Authorization Server Access url
+http://localhost:9100/oauth/authorize?response_type=code&client_id=productclientapp&scope=read
+
+http://localhost:9100/oauth/authorize?response_type=code&client_id=couponclientapp&scope=read
